@@ -1,0 +1,15 @@
+Name	Description	Unit	Label	QCflag
+id	Index	-	Index	none
+JNCC_Type	JNCC Type	-	Estuary type	none
+ERP2_Type	ERP2 Type	-	Estuary type	none
+Type_id	Type index	-	Estuary type	none
+Range	Tidal range	m	Range	raw
+Vmhw	Volume at Mean High Water	m^3	Volume	model
+Vmtl	Volume at Mean Tidel Level	m^3	Volume	model
+Vmlw	Volume at Mean Low Water	m^3	Volume	model
+Smhw	Surface area at Mean High Water	m^2	Surface area	model
+Smtl	Surface area at Mean Tide Level	m^2	Surface area	model
+Smlw	Surface area at Mean Low Water	m^2	Surface area	model
+Amhw	Cross-section area at Mean High Water	m^2	Cross-section area	model
+Amtl	Cross-section area at Mean Tide Level	m^2	Cross-section area	model
+Amlw	Cross-section area at Mean Low Water	m^2	Cross-section area	model

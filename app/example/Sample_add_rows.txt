@@ -1,0 +1,8 @@
+Name	id	JNCC_Type	ERP2_Type	Type_id	Range	Vmhw	Vmtl	Vmlw	Smhw	Smtl	Smlw	Amhw	Amtl	Amlw
+Blyth Estuary (Northumberland)	95	Bar Built Estuary	Ria	3	2.1	8.51E+06	4.56E+06	3.10E+06	4.25E+06	8.58E+05	6.76E+05	1.11E+03	9.16E+02	7.40E+02
+Thames Estuary	117	Coastal Plain	Funnel	5	6.5	9.67E+08	6.11E+08	4.17E+08	2.00E+08	8.19E+07	6.49E+07	5.81E+04	3.85E+04	2.31E+04
+Tyne Estuary	96	Complex	Ria	3	4.3	5.19E+07	3.38E+07	2.05E+07	1.40E+07	6.51E+06	5.49E+06	9.68E+03	7.54E+03	5.19E+03
+Wear Estuary	97	Complex	Ria	3	4.4	5.85E+06	2.26E+06	1.08E+06	4.24E+06	7.05E+05	4.40E+05	1.41E+03	9.24E+02	5.91E+02
+Tees Estuary	98	Coastal Plain	Spit Enclosed	4	4.4	3.23E+07	1.70E+07	1.31E+07	2.19E+07	1.82E+06	1.70E+06	1.98E+03	2.34E+02	0.00E+00
+Esk Estuary (Yorkshire)	99	Complex	Ria	3	4.6	5.72E+06	4.40E+05	1.77E+05	2.64E+05	1.19E+05	9.62E+04	1.03E+03	6.44E+02	2.39E+02
+Humber Estuary	100	Coastal Plain	Spit Enclosed	4	6	2.90E+09	1.93E+09	1.16E+09	6.48E+08	3.55E+08	1.93E+08	1.04E+05	8.71E+04	6.11E+04
