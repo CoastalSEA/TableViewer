@@ -164,7 +164,7 @@ classdef TableViewer < muiModelUI
             % positions:  top left [0.95,0.48];    top right [0.95,0.97]
             %         bottom left [0.45, 0.48]; bottom right [0.45,0.97]
             props = {...                                     
-                'EDBparameters','Inputs',[0.95,0.48],{180,60},'Input parameters:'};
+                'TVparameters','Inputs',[0.95,0.48],{180,60},'Input parameters:'};
         end    
  %%
         function setTabAction(~,src,cobj)
@@ -253,9 +253,9 @@ classdef TableViewer < muiModelUI
             %menu to access online documentation and manual pdf file                  
             switch src.Text
                 case 'Documentation'
-                    doc estuarydb          %must be name of html help file 
+                    doc tableviewer          %must be name of html help file 
                 case 'Manual'
-                    estdb_open_manual;
+                    tableviewer_open_manual;
             end  
         end
 

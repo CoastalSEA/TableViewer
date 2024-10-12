@@ -1,49 +1,53 @@
 <deployment-project plugin="plugin.apptool" plugin-version="1.0">
-  <configuration build-checksum="1591921103" file="D:\Matlab Code\MUImodels\muiApps\EstuaryDB\EstuaryDB.prj" location="D:\Matlab Code\MUImodels\muiApps\EstuaryDB" name="EstuaryDB" target="target.mlapps" target-name="Package App">
-    <param.appname>EstuaryDB</param.appname>
+  <configuration build-checksum="1432820601" file="D:\Matlab Code\muiModels\TableViewer\app\TableViewer.prj" location="D:\Matlab Code\muiModels\TableViewer\app" name="TableViewer" target="target.mlapps" target-name="Package App">
+    <param.appname>TableViewer</param.appname>
     <param.authnamewatermark>Ian Townend</param.authnamewatermark>
-    <param.email>I.Townend@soton.ac.uk</param.email>
+    <param.email>i.townend@soton.ac.uk</param.email>
     <param.company>University of Southampton</param.company>
-    <param.icon />
-    <param.icons />
-    <param.summary>App provides tools to combine estuary data from multiple sources for intercomparison and further anlysis</param.summary>
-    <param.description />
-    <param.screenshot />
+    <param.icon>${PROJECT_ROOT}\TableViewer_resources\icon_24.png</param.icon>
+    <param.icons>
+      <file>${PROJECT_ROOT}\TableViewer_resources\icon_48.png</file>
+      <file>${PROJECT_ROOT}\TableViewer_resources\icon_24.png</file>
+      <file>${PROJECT_ROOT}\TableViewer_resources\icon_16.png</file>
+    </param.icons>
+    <param.summary>App that enables tables of data to be loaded from text files, spreadsheets, or .mat files containing tables.</param.summary>
+    <param.description>TableViewer is a Matlab(TM) App that enables tables of data to be loaded from text files, spreadsheets to mat files containing tables. Some standard tools to plot and analyse the data are included and the two function provide the ability for the user to add their own plotting and analysis functions.</param.description>
+    <param.screenshot>D:\Matlab Code\muiModels\App_logos\CoastalSEA_apps.png</param.screenshot>
     <param.version>1.0</param.version>
-    <param.products.name />
-    <param.products.id />
-    <param.products.version />
+    <param.products.name>
+      <item>MATLAB</item>
+    </param.products.name>
+    <param.products.id>
+      <item>1</item>
+    </param.products.id>
+    <param.products.version>
+      <item>9.13</item>
+    </param.products.version>
     <param.platforms />
     <param.output>${PROJECT_ROOT}</param.output>
-    <param.guid>b8b5e577-6eeb-4dc5-a43f-db71c161aa40</param.guid>
+    <param.guid>577b9a90-0dea-4242-90e4-40a3ca667692</param.guid>
     <unset>
-      <param.icon />
-      <param.icons />
-      <param.description />
-      <param.screenshot />
       <param.version />
-      <param.products.name />
-      <param.products.id />
-      <param.products.version />
       <param.platforms />
       <param.output />
     </unset>
     <fileset.main>
-      <file>${PROJECT_ROOT}\EstuaryDB.m</file>
+      <file>${PROJECT_ROOT}\TableViewer.m</file>
     </fileset.main>
     <fileset.depfun>
-      <file>${PROJECT_ROOT}\EDBtools.m</file>
+      <file>${PROJECT_ROOT}\tableviewer_user_plots.m</file>
+      <file>${PROJECT_ROOT}\tableviewer_user_tools.m</file>
     </fileset.depfun>
     <fileset.resources>
       <file>${PROJECT_ROOT}\doc</file>
-      <file>${PROJECT_ROOT}\EstuaryDB_logo.jpg</file>
       <file>${PROJECT_ROOT}\example</file>
       <file>${PROJECT_ROOT}\help</file>
       <file>${PROJECT_ROOT}\info.xml</file>
+      <file>${PROJECT_ROOT}\tableviewer_logo.jpg</file>
     </fileset.resources>
     <fileset.package />
     <build-deliverables>
-      <file location="D:\Matlab Code\MUImodels\muiApps" name="EstuaryDB" optional="false">D:\Matlab Code\MUImodels\muiApps\EstuaryDB</file>
+      <file location="D:\Matlab Code\muiModels\TableViewer" name="app" optional="false">D:\Matlab Code\muiModels\TableViewer\app</file>
     </build-deliverables>
     <workflow />
     <matlab>

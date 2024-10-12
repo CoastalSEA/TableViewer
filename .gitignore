@@ -4,3 +4,4 @@ app/Data
 app/Working Docs
 *.asv
 *.mat
+/app/Log.txt
