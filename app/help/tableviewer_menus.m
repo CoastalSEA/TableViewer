@@ -32,9 +32,25 @@
 % the selection to the clipboard.
 
 %% Setup
-% * *Import Data*: dialogue to import data from a file.
-% * *Input Parameters*: dialogue to define model input parameters.
+% * *Import Data*: dialogue to import data from a file. See
+% <matlab:tableviewer_open_manual manual> for details of file formats.
+% * *Input Parameters*: dialogue to define input parameters (template for user to define inputs required).
 % * *Model Constants*: a number of constants are used in the model. Generally, the default values are appropriate but these can be adjusted and saved with the project if required.
+
+%%
+% _*Accessing the Input Parameters:*_
+% The data are saved to _mobj.Inputs.TVparameters_, where _mobj_ is an 
+% instance of the *TableViewer* class. The parameters are set using: 
+% _setClassObj(mobj, 'Inputs', 'TVparameters', obj)_, where _obj_ is an 
+% instance of *TVparameters*; and can be accessed using 
+% _getClassObj(mobj, 'Inputs', 'TVparameters')_, or directly using 
+% _mobj.Inputs.TVparameters_. Both return the saved instance of the 
+% *TVparameters* object. Alternatively, using _getProperties_ for a cell 
+% array, _getPropertiesStruct_ to return a struct and _getPropertiesTable_ to return 
+% a table; e.g., 
+%%
+%   params = getProperties(mobj.Inputs.TVparameters);
+
 
 %% Run
 % * *User Tools*: calls function for user defined functions. Default version 
@@ -52,9 +68,9 @@
 % selected classification variable (from the same dataset as the main variable). 
 
 %% Help
-% * *Help>Documentation*: access the online documentation for XXXXXX.
-% * *Help>Manual*: access the manual pdf file.
+% * *Help>Documentation*: access the online documentation for TableViewer.
+% * *Help>Manual*: access the <matlab:tableviewer_open_manual manual> pdf file.
 
 %% See Also
-% The <matlab:xxx_open_manual manual> provides further details of setup and 
+% The <matlab:tableviewer_open_manual manual> provides further details of setup and 
 % configuration of the model.

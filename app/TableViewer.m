@@ -102,10 +102,10 @@ classdef TableViewer < muiModelUI
             menu.Project(3).Callback = repmat({@obj.projectMenuOptions},[1,2]);
             
             %% Setup menu -------------------------------------------------
-            menu.Setup(1).List = {'Import Data','Model Constants'};                                    
-            menu.Setup(1).Callback = {'gcbo;',@obj.setupMenuOptions};
+            menu.Setup(1).List = {'Import Data','Input parameters','Model Constants'};                                    
+            menu.Setup(1).Callback = {'gcbo;',@obj.setupMenuOptions,@obj.setupMenuOptions};
             %add separators to menu list (optional - default is off)
-            menu.Setup(1).Separator = {'off','on'}; %separator preceeds item
+            menu.Setup(1).Separator = {'off','off','on'}; %separator preceeds item
             
             % submenu for Import Data (if these are changed need to edit
             % loadMenuOptions to be match)
@@ -164,7 +164,7 @@ classdef TableViewer < muiModelUI
             % positions:  top left [0.95,0.48];    top right [0.95,0.97]
             %         bottom left [0.45, 0.48]; bottom right [0.45,0.97]
             props = {...                                     
-                'TVparameters','Inputs',[0.95,0.48],{180,60},'Input parameters:'};
+                'TVparameters','Inputs',[0.90,0.77],{220,180},'Input parameters:'};
         end    
  %%
         function setTabAction(~,src,cobj)
@@ -198,8 +198,11 @@ classdef TableViewer < muiModelUI
         function setupMenuOptions(obj,src,~)
             %callback functions for data input
             switch src.Text
-                case 'Setup something else'
-
+                case 'Input parameters'
+                    TVparameters.setInput(obj);  
+                    %update tab display with input data
+                    tabsrc = findobj(obj.mUI.Tabs,'Tag','Inputs');
+                    InputTabSummary(obj,tabsrc);
                 case 'Model Constants'
                     obj.Constants = setInput(obj.Constants);
             end

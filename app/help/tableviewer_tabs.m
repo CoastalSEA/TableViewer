@@ -5,8 +5,7 @@
 
 %% Summary of Tabs
 % * *Cases*: lists the cases that have been run with a case id and description.
-% * *Inputs*: Not used. Would diplay parameters from the TVparameters class
-% if included.
+% * *Inputs*: displays parameters from the TVparameters class, if used.
 % * *Table*: tabulates a selected dataset (display only).
 % * *Q-Plot*: user selects a variable from imported data or model output, and creates a plot on the tab. The plot cannot be edited.
 

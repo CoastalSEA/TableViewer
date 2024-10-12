@@ -26,10 +26,13 @@
 
 %% TableViewer classes
 % * *TableViewer* - defines the behaviour of the main UI.
+% * *TVparameters* - defines input parameters. This is a template for the user 
+% to define any inputs required for bespoke data analysis functions. The
+% class file has to be edited to define the requied inputs.
 
 %% TableViewer functions
-% * *tableviewer_user_tools* - includes a function to create a figure t
-% abulating a dataset and the option for the user to add functions as required.
+% * *tableviewer_user_tools* - includes a function to create a figure 
+% tabulating a dataset and the option for the user to add functions as required.
 % * *tableviewer_user_plots* - includes functions to plot a scatter diagram 
 % of two variables from any case (selected variables must be the same 
 % length) and a bar chart of a variable with the bars coloured based on a 
