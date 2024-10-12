@@ -1,6 +1,5 @@
 # TableViewer
-App that enables tables of data to be loaded from text files, 
-spreadsheets, or .mat files containing tables.
+App that enables tables of data to be loaded from text files, spreadsheets, or .mat files containing tables.
 
 ## Licence
 The code is provided as Open Source code (issued under a BSD 3-clause License).
@@ -9,18 +8,7 @@ The code is provided as Open Source code (issued under a BSD 3-clause License).
 TableViewer is written in Matlab(TM) and requires v2016b, or later. In addition, TableViewer requires the _dstoolbox_ and the _muitoolbox_.
 
 ## Background
-TableViewer App is a MatlabTM App to load tabular data from text files, 
-spreadsheets and table or dstable data held in a .mat file. This allows 
-the rapid viewing of a range of default plots, interactive plotting and 
-statistics tools and the ability to add bespoke analysis and plotting. 
-The latter has the advantage that the functions and outputs can be more 
-clearly documented than is often the case in a spreadsheet, thereby 
-maintaining the history (especially if the functions are maintained in a 
-version control repository, such as git or svn). If the latter is 
-intended use, you can clone the TableViewer from github (https://github.com/CoastalSEA) 
-if you want to build and maintain your own version of the App. 
-Alternatively, you can create a branch and contribute your additions to 
-the development.
+TableViewer App is a MatlabTM App to load tabular data from text files, spreadsheets and table or dstable data held in a .mat file. This allows  he rapid viewing of a range of default plots, interactive plotting and statistics tools and the ability to add bespoke analysis and plotting. The latter has the advantage that the functions and outputs can be more clearly documented than is often the case in a spreadsheet, thereby maintaining the history (especially if the functions are maintained in a version control repository, such as git or svn). If the latter is intended use, you can clone the TableViewer from github (https://github.com/CoastalSEA) if you want to build and maintain your own version of the App. Alternatively, you can create a branch and contribute your additions to the development.
 
 ## TableViewer classes
 * *TableViewer* - defines the behaviour of the main UI.

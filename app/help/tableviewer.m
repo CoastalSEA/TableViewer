@@ -1,6 +1,6 @@
 %% TableViewer
-% App that enables tables of data to be loaded from text files, 
-% spreadsheets, or .mat files containing tables.
+% App to analyse tables of data loaded from text files, spreadsheets, 
+% or .mat files containing tables.
 
 %% Licence
 % The code is provided as Open Source code (issued under a BSD 3-clause License).
