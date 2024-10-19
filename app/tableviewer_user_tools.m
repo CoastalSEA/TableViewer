@@ -26,7 +26,7 @@ function tableviewer_user_tools(mobj)
     while ok>0
         selection = listdlg("ListString",listxt,"PromptString",...
                             'Select option:','SelectionMode','single',...
-                            'ListSize',[150,200],'Name','EDBtools');
+                            'ListSize',[150,200],'Name','tvtools');
         if isempty(selection), ok = 0; continue; end
 
         switch listxt{selection}
@@ -46,6 +46,12 @@ function get_dataTable(mobj)
     promptxt = 'Select Case to tabulate';
     [cobj,~,datasets,idd] = selectCaseDataset(mobj,promptxt);
     dst = cobj.Data.(datasets{idd});
+    firstcell = dst.DataTable{1,1};
+    if ~isscalar(firstcell) || (iscell(firstcell) && ~isscalar(firstcell{1}))
+        %not tabular data
+        warndlg('Selected dataset is not tabular')
+        return; 
+    end 
     title = sprintf('Data for %s table',datasets{idd});
     desc = sprintf('Source:%s\nMeta-data: %s',dst.Source{1},dst.MetaData);
     ht = tablefigure(title,desc,dst);

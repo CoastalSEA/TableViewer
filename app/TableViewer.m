@@ -46,7 +46,7 @@ classdef TableViewer < muiModelUI
             %Plot options: '2D','3D','4D','2DT','3DT','4DT'
             obj.DataUItabs.Plot = {'2D','3D'};  
             %Statistics options: 'General','Timeseries','Taylor','Intervals'
-            obj.DataUItabs.Stats = {'General'};  
+            obj.DataUItabs.Stats = {'General','Timeseries','Taylor'};  
             
             modelLogo = 'TableViewer_logo.jpg';  %default splash figure - edit to alternative
             initialiseUI(obj,modelLogo); %initialise menus and tabs                  
@@ -167,7 +167,7 @@ classdef TableViewer < muiModelUI
                 'TVparameters','Inputs',[0.90,0.77],{220,180},'Input parameters:'};
         end    
  %%
-        function setTabAction(~,src,cobj)
+        function setTabAction(obj,src,cobj)
             %function required by muiModelUI and sets action for selected
             %tab (src)
             msg = 'No results to display';

@@ -8,6 +8,7 @@
 % * *Inputs*: displays parameters from the TVparameters class, if used.
 % * *Table*: tabulates a selected dataset (display only).
 % * *Q-Plot*: user selects a variable from imported data or model output, and creates a plot on the tab. The plot cannot be edited.
+% * *Stats*: output from some statistical methods are displayed on the tab.
 
 %% Accessing Case meta-data
 % On the *Cases* tab, using the mouse to click on a case record generates a

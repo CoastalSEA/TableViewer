@@ -45,6 +45,7 @@ classdef TVparameters < muiPropertyUI
             %                                       repmat({'double'},1,8)];
         end 
     end
+    
 %%  
     methods (Static)  
         function obj = setInput(mobj,editflag)

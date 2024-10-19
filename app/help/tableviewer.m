@@ -28,7 +28,7 @@
 % * *TableViewer* - defines the behaviour of the main UI.
 % * *TVparameters* - defines input parameters. This is a template for the user 
 % to define any inputs required for bespoke data analysis functions. The
-% class file has to be edited to define the requied inputs.
+% class file has to be edited to define the required inputs.
 
 %% TableViewer functions
 % * *tableviewer_user_tools* - includes a function to create a figure 
