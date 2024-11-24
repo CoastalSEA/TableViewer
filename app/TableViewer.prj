@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.apptool" plugin-version="1.0">
-  <configuration build-checksum="2938075734" file="D:\Matlab Code\muiModels\TableViewer\app\TableViewer.prj" location="D:\Matlab Code\muiModels\TableViewer\app" name="TableViewer" target="target.mlapps" target-name="Package App">
+  <configuration build-checksum="4063834180" file="D:\Matlab Code\muiModels\TableViewer\app\TableViewer.prj" location="D:\Matlab Code\muiModels\TableViewer\app" name="TableViewer" target="target.mlapps" target-name="Package App">
     <param.appname>TableViewer</param.appname>
     <param.authnamewatermark>Ian Townend</param.authnamewatermark>
     <param.email>i.townend@soton.ac.uk</param.email>
