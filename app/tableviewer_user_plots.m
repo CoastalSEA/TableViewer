@@ -51,6 +51,8 @@ function scatter_plot(mobj)
     answer = questdlg(questxt,'Scatter','2D','3D','2D');
 
     %prompt user to select variables to be used in plot
+    %NB uses =get_variable to restrict selection to variables only to
+    %select variables or dimensions use get_selection
     promptxt = 'Select X-variable:';    
     [indvar,indsel] = get_selection(mobj,promptxt,'XYZmxvar',1);
     if isempty(indvar), return; end

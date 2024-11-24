@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.apptool" plugin-version="1.0">
-  <configuration build-checksum="1456032693" file="D:\Matlab Code\muiModels\TableViewer\app\TableViewer.prj" location="D:\Matlab Code\muiModels\TableViewer\app" name="TableViewer" target="target.mlapps" target-name="Package App">
+  <configuration build-checksum="2938075734" file="D:\Matlab Code\muiModels\TableViewer\app\TableViewer.prj" location="D:\Matlab Code\muiModels\TableViewer\app" name="TableViewer" target="target.mlapps" target-name="Package App">
     <param.appname>TableViewer</param.appname>
     <param.authnamewatermark>Ian Townend</param.authnamewatermark>
     <param.email>i.townend@soton.ac.uk</param.email>
@@ -13,7 +13,7 @@
     <param.summary>App that enables tables of data to be loaded from text files, spreadsheets, or .mat files containing tables.</param.summary>
     <param.description>TableViewer is a Matlab(TM) App that enables tables of data to be loaded from text files, spreadsheets to mat files containing tables. Some standard tools to plot and analyse the data are included and the two function provide the ability for the user to add their own plotting and analysis functions.</param.description>
     <param.screenshot />
-    <param.version>1.0</param.version>
+    <param.version>1.1</param.version>
     <param.products.name>
       <item>MATLAB</item>
     </param.products.name>
@@ -28,7 +28,6 @@
     <param.guid>577b9a90-0dea-4242-90e4-40a3ca667692</param.guid>
     <unset>
       <param.screenshot />
-      <param.version />
       <param.platforms />
       <param.output />
     </unset>

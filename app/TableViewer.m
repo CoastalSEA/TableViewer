@@ -15,8 +15,8 @@ classdef TableViewer < muiModelUI
 % 
     properties  (Access = protected)
         %implement properties defined as Abstract in muiModelUI
-        vNumber = '1.0'
-        vDate   = 'Oct 2024'
+        vNumber = '1.1'
+        vDate   = 'Dec 2024'
         modelName = 'TableViewer'                        
         %Properties defined in muiModelUI that need to be defined in setGui
         % ModelInputs  %classes required by model: used in isValidModel check 
