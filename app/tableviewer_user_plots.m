@@ -128,22 +128,27 @@ function type_plot(mobj)
     %bar plot of variable against table rows, with bars shaded to reflect a
     %classification variable (e.g. Type)
 
-    promptxt = 'Select Case to tabulate';
+    promptxt = 'Select Case to plot';
     [cobj,~,datasets,idd] = selectCaseDataset(mobj,promptxt);
-
-    [ax,idx,ids] = userPlot(cobj); %idx sort order of x-variable if a scalarplot
-                                   %ids indices of selected sub-set (after sorting)
-
-    %select variable to use for classification
-    dst = cobj.Data.(datasets{idd});
-    varnames = dst.VariableNames;
-    vardesc = dst.VariableDescriptions;
-    
-    promptxt = 'Select classification variable:';   
-    idv = listdlg('PromptString',promptxt,'ListString',vardesc,...
-                            'SelectionMode','single','ListSize',[180,300]);
+    if isempty(cobj), return; end
+    dst = cobj.Data.(datasets{idd});  %selected dataset
+    promptxt = 'Select Variable to plot:'; 
+    [~,idv] = selectAttribute(dst,1,promptxt); %1 - select a variable
     if isempty(idv), return; end
-    typevar = dst.(varnames{idv}); 
+
+    [ax,idx,ids] = userPlot(cobj,idd,idv); %idx sort order of x-variable if a scalarplot
+                                           %ids indices of selected sub-set (after sorting)
+
+    %select variable to use for classification (restrict to selection from
+    %same case but allow different dataset to be used
+    promptxt = 'Select classification variable:'; 
+    datasetname = getDataSetName(cobj,promptxt); 
+    classdst = cobj.Data.(datasetname);    
+    [~,idc] = selectAttribute(classdst,1,promptxt); %1 - select a variable
+    if isempty(idc), return; end
+    varname = classdst.VariableNames{idc};
+    vardesc = classdst.VariableDescriptions{idc};
+    typevar = classdst.(varname);  
     typevar = typevar(idx); %if sorted in userPlot ensure same order
 
     if isnumeric(typevar)
@@ -157,6 +162,20 @@ function type_plot(mobj)
     ntypes = length(types);
 
     typevar = typevar(ids); 
+
+    %amend X-ticks if too many labels to fit easily
+    if length(ax.Children.XData)>50
+        nvar = length(ax.Children.XData);
+        promptxt = sprintf('%d X-tick labels. Replace with integers?',nvar);
+        answer = questdlg(promptxt,'Type plot','Yes','No','Yes');
+        if strcmp(answer,'Yes')
+            nint = 10;
+            ints = 0:nint:nvar; ints(1) = 1;
+            ax.XTick = num2ruler(ints,ax.XAxis);
+            ax.XTickLabel =  ints;
+            ax.XAxis.TickDirection = 'out';
+        end
+    end
 
     %set color map to identify each type
     mycolormap = cmap_selection();  %prompts user to select a colormap
@@ -179,7 +198,7 @@ function type_plot(mobj)
         cb.TickLabels = types;           %categories
     end
     %add label above colorbar so it does not disappear off side of figure
-    cb.Label.String = vardesc{idv};  %add variable description to colorbar
+    cb.Label.String = vardesc;       %add variable description to colorbar
     cb.Label.Rotation = 0; % Set rotation to 0 degrees
     cb.Label.Position = [0.5, 1.05]; % Adjust position to be above the colorbar
     cb.Label.VerticalAlignment = 'bottom'; % Align the label vertically
@@ -209,7 +228,6 @@ function [cobj,classrec,datasets,idd] = selectCaseDataset(mobj,promptxt)
     if length(datasets)>1
         idd = listdlg('PromptString','Select table:','ListString',datasets,...
                             'SelectionMode','single','ListSize',[160,200]);
-        if isempty(idd), return; end
     end
 end
 

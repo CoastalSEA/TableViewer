@@ -47,7 +47,11 @@ function get_dataTable(mobj)
     [cobj,~,datasets,idd] = selectCaseDataset(mobj,promptxt);
     dst = cobj.Data.(datasets{idd});
     firstcell = dst.DataTable{1,1};
-    if ~isscalar(firstcell) || (iscell(firstcell) && ~isscalar(firstcell{1}))
+    if iscell(firstcell), firstcell = firstcell{1}; end
+    isscalarvalue = isscalar(firstcell) && isnumeric(firstcell) || ... %check for scalar numbers
+                    ischar(firstcell) || isstring(firstcell) || ...    %or character vector or string
+                    iscategorical(firstcell);                          %or categorical value
+    if ~isscalarvalue
         %not tabular data
         warndlg('Selected dataset is not tabular')
         return; 
