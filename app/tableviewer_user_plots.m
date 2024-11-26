@@ -129,7 +129,7 @@ function type_plot(mobj)
     %classification variable (e.g. Type)
 
     promptxt = 'Select Case to plot';
-    [cobj,~,datasets,idd] = selectCaseDataset(mobj,promptxt);
+    [cobj,~,datasets,idd] = selectCaseDataset(mobj.Cases,[],{'muiTableImport'},promptxt);
     if isempty(cobj), return; end
     dst = cobj.Data.(datasets{idd});  %selected dataset
     promptxt = 'Select Variable to plot:'; 
@@ -216,18 +216,6 @@ function isvalid = checkdimensions(x,y)
     %
     if ~isvalid
         warndlg('Dimensions of selected variables do not match')
-    end
-end
-
-%%
-function [cobj,classrec,datasets,idd] = selectCaseDataset(mobj,promptxt)
-    %select case and dataset for use in plot or analysis
-    [cobj,classrec] = selectCaseObj(mobj.Cases,[],{'muiTableImport'},promptxt);
-    datasets = fields(cobj.Data);
-    idd = 1;
-    if length(datasets)>1
-        idd = listdlg('PromptString','Select table:','ListString',datasets,...
-                            'SelectionMode','single','ListSize',[160,200]);
     end
 end
 
