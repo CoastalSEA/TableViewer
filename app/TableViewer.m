@@ -235,7 +235,7 @@ classdef TableViewer < muiModelUI
                 case 'User Tools'
                     tableviewer_user_tools(obj);  
                 case 'Derive Output'
-                    obj.mUI.Manip = muiManipUI.getManipUI(obj);
+                    obj.mUI.ManipUI = muiManipUI.getManipUI(obj);
             end            
         end               
             

@@ -46,24 +46,10 @@ function get_dataTable(mobj)
     promptxt = 'Select Case to tabulate';
     [cobj,~,datasets,idd] = selectCaseDataset(mobj,promptxt);
     dst = cobj.Data.(datasets{idd});
-    firstcell = dst.DataTable{1,1};
-    if iscell(firstcell), firstcell = firstcell{1}; end
-    isscalarvalue = isscalar(firstcell) && isnumeric(firstcell) || ... %check for scalar numbers
-                    ischar(firstcell) || isstring(firstcell) || ...    %or character vector or string
-                    iscategorical(firstcell);                          %or categorical value
-    if ~isscalarvalue
-        %not tabular data
-        warndlg('Selected dataset is not tabular')
-        return; 
-    end 
-    title = sprintf('Data for %s table',datasets{idd});
-    desc = sprintf('Source:%s\nMeta-data: %s',dst.Source{1},dst.MetaData);
-    ht = tablefigure(title,desc,dst);
-    ht.Units = 'normalized';
-    uicontrol('Parent',ht,'Style','text',...
-               'Units','normalized','Position',[0.1,0.95,0.8,0.05],...
-               'String',['Case: ',dst.Description],'FontSize',10,...
-               'HorizontalAlignment','center','Tag','titletxt');
+    titletxt = sprintf('Data for %s(%s)',dst.Description,datasets{idd}); 
+
+    %generate table
+    table_figure(dst,titletxt)
 end
 
 %%
