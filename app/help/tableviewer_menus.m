@@ -19,6 +19,7 @@
 % * *Cases > Edit Description*: user selects a Case to edit the Case description.
 % * *Cases > Edit DS properties*: initialises the  UI for editing Data Set properties (DSproperties).
 % * *Cases > Edit Data Set*: initialises the Edit Data UI for editing data sets.
+% * *Cases > Modify Variable Type*: select a variable and modify the data type of that variable. Used mainly to make data categorical or ordinal.
 % * *Cases > Save*: user selects a data set to be saved from a list box of Cases and the is then prompted to name the file. The data are written to an Excel spreadsheet. 
 % * *Cases > Delete*: user selects Case(s) to be deleted from a list box of Cases and results are then deleted (model setup is not changed).
 % * *Cases > Reload*: user selects a Case to reload as the current parameter settings.
@@ -41,15 +42,19 @@
 % _*Accessing the Input Parameters:*_
 % The data are saved to _mobj.Inputs.TVparameters_, where _mobj_ is an 
 % instance of the *TableViewer* class. The parameters are set using: 
-% _setClassObj(mobj, 'Inputs', 'TVparameters', obj)_, where _obj_ is an 
-% instance of *TVparameters*; and can be accessed using 
-% _getClassObj(mobj, 'Inputs', 'TVparameters')_, or directly using 
-% _mobj.Inputs.TVparameters_. Both return the saved instance of the 
-% *TVparameters* object. Alternatively, using _getProperties_ for a cell 
-% array, _getPropertiesStruct_ to return a struct and _getPropertiesTable_ to return 
+%%
+% * _setClassObj(mobj, 'Inputs', 'TVparameters', obj)_, where _obj_ is an 
+% instance of *TVparameters*; and can be accessed using:
+% * _getClassObj(mobj, 'Inputs', 'TVparameters')_, or directly using 
+% _mobj.Inputs.TVparameters_. 
+%%
+% Both return the saved instance of the 
+% *TVparameters* object. Alternatively, use _getProperties_ to return a cell 
+% array, _getPropertiesStruct_ to return a struct, or _getPropertiesTable_ to return 
 % a table; e.g., 
 %%
 %   params = getProperties(mobj.Inputs.TVparameters);
+%   paramtable = getPropertiesTable(mobj.Inputs.TVparameters);
 
 
 %% Run
