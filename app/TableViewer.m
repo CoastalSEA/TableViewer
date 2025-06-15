@@ -173,7 +173,7 @@ classdef TableViewer < muiModelUI
             msg = 'No results to display';
             switch src.Tag                                
                 case 'Plot' 
-                     tabPlot(cobj,src);
+                     tabPlot(cobj,obj,src);
                 case 'Stats'
                     lobj = getClassObj(obj,'mUI','Stats',msg);
                     if isempty(lobj), return; end
