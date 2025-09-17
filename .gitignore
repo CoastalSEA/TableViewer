@@ -2,6 +2,8 @@
 app/TableViewer.mlappinstall
 app/Data
 app/Working Docs
+app/remapppath.m
+app/setapppath.m
 *.asv
 *.mat
 /app/Log.txt
